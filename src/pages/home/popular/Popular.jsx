@@ -1,0 +1,23 @@
+import React,{useState} from 'react'
+import ContentWrapper from '../../../components/ContentWrapper/ContentWrapper';
+import SwitchTabs from '../../../components/Switchtabs/SwitchTabs';
+import useFetch from '../../../hooks/usefetch';
+import Carousel from '../../../components/carousel/carousel';
+const Popular = () => {
+    const [endpoint,setendpoint]=useState("movie");
+    const {data,loading}=useFetch(`/${endpoint}/popular`);
+    const onTabChange=(tab)=>{
+        setendpoint(tab==="Movies"?"movie":"tv");
+    }
+  return (
+    <div className='carouselSection'>
+        <ContentWrapper>
+            <span className='carouselTitle'>What's Popular</span>
+            <SwitchTabs data={["Movies","TV Shows"]} onTabChange={onTabChange} />
+        </ContentWrapper>
+        <Carousel data={data?.results} loading={loading} endpoint={endpoint} />
+    </div>
+  )
+}
+
+export default Popular
