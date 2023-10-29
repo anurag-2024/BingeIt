@@ -8,7 +8,6 @@ import { fetchDatafromApi } from "../../utilis/api";
 import ContentWrapper from "../../components/ContentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-import CircleRating from "../../components/circleRating/circlerating";
 
 let filters = {};
 const sortbyData = [
