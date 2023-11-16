@@ -1,4 +1,4 @@
-import { useState ,useEffect} from 'react'
+import { useEffect} from 'react'
 import { fetchDatafromApi } from './utilis/api';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
